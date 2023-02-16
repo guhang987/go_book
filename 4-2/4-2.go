@@ -1,0 +1,32 @@
+package main
+
+// 编写一个程序 用于在默认情况下输出sha256散列，但也支持一个输出sha384或sha512散列的命令行标记
+import (
+	"bufio"
+	"crypto/sha256"
+	"crypto/sha512"
+	"flag"
+	"fmt"
+	"os"
+)
+
+var f = flag.String("flag", "sha256", "flag = sha256 | sha384 | sha512")
+
+func main() {
+	flag.Parse()
+	input := bufio.NewScanner(os.Stdin)
+	for input.Scan() {
+		bytes := input.Bytes()
+		switch *f {
+		case "sha256":
+			fmt.Printf("sha256: %x\n", sha256.Sum256(bytes))
+
+		case "sha384":
+			fmt.Printf("sha384: %x\n", sha512.Sum384(bytes))
+
+		case "sha512":
+			fmt.Printf("sha512: %x\n", sha512.Sum512(bytes))
+		}
+
+	}
+}
