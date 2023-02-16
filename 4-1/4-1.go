@@ -1,3 +1,13 @@
+/*
+ * @Author: guhang987 610203816@qq.com
+ * @Date: 2023-02-12 16:35:25
+ * @LastEditors: guhang987 610203816@qq.com
+ * @LastEditTime: 2023-02-16 16:06:16
+ * @FilePath: /无标题 (工作区)/Users/trafalgar/Code/go/hello_go_book/4-1/4-1.go
+ * @Description:
+ *
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
+ */
 // 编写一个函数，用于统计SHA256散列中不同的位数
 package main
 
